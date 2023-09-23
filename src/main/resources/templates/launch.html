@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>launch</title>
+<style>
+    .button{
+        background-color: greenyellow;
+        margin-left: 45%;
+        align-content: center;
+        background-size: auto;
+    }
+</style>
+<script>
+    function onSubmitButton() {
+
+        function urlParam() {
+
+        }
+
+        function auth(fhirServiceUrl, callback) {
+            callback && callback({
+                "url": fhirServiceUrl || urlParam("fhirServiceUrl")
+            });
+
+        }
+
+        function relative(url) {
+            return ("https://297b-150-107-190-51.ngrok-free.app/");
+        }
+
+        var client = params.client;
+        var client_id = null;
+        var response_type = 'code';
+        var scope = "/launch";
+        var redirect_uri = relative("");
+        var state = 'state';
+        var redirect_to =
+            "client_id=" + encodeURIComponent(client.client_id) + "&" +
+            "response_type=" + encodeURIComponent(client.response_type) + "&" +
+            "scope=" + encodeURIComponent(client.scope) + "&" +
+            "redirect_uri=" + encodeURIComponent(client.redirect_uri) + "&" +
+            "state=" + encodeURIComponent(state);
+
+        window.location.href = redirect_to;
+
+    }
+</script>
+</head>
+<body>
+<h1 align="center" class="container">EPIC Patient Facing Application</h1>
+<br>
+<br>
+<h2 class="container" style="text-align: center"  >Are you sure to enter an Epic System?</h2>
+<br>
+<button class="button"><a href="https://signin.epic.com/adfs/ls/?wa=wsignin1.0&wtrealm=https%3a%2f%2ffhir.epic.com%2f&wctx=rm%3d0%26id%3dpassive%26ru%3d%252fAccount%252fSignIn%253freturnUrl%253d&wct=2023-09-23T12%3a34%3a09Z&wreply=https%3a%2f%2ffhir.epic.com%2f"> Click me</a></button>
+
+<!--<span id="submitButton" class="submit" tabindex="4" role="button" onkeypress="if (event &amp;&amp; event.keyCode == 32) onSubmitButton()" onclick="return onSubmitButton();">Sign in</span>-->
+</body>
+</html>
