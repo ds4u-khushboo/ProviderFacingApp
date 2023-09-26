@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Patient Details | Admin</title>
+    <meta charset="UTF-8">
+    <title>Patient Details | Admin</title>
 
-  <!-- customs css for this page -->
-  <style>
-    .my-card {
-      box-shadow: 0px 0px 10px 1px maroon;
-      /*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
-    }
-  </style>
-  <!-- end of customs css for this page -->
+    <!-- customs css for this page -->
+    <style>
+        .my-card {
+            box-shadow: 0px 0px 10px 1px maroon;
+            /*box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);*/
+        }
+    </style>
+    <!-- end of customs css for this page -->
 
 </head>
 <body>
 
 <div class="col-md-12 p-5">
-  <div class="card my-card">
-    <div class="card-body">
-      <p class="text-center text-danger fs-3" style="text-align: center">Patient Details</p>
+    <div class="card my-card">
+        <div class="card-body">
+            <p class="text-center text-danger fs-3" style="text-align: center">Patient Details</p>
 
-      <table class="table table-success table-striped">
-        <thead>
-        <tr class="table">
-          <th scope="col" style="padding-right:70px">Full Name</th>
-          <th scope="col" style="padding-right:70px">Gender</th>
-          <th scope="col" style="padding-right:70px">Age</th>
-          <th scope="col" style="padding-right:70px">Appointment</th>
-          <th scope="col" style="padding-right:70px">Email</th>
-          <th scope="col" style="padding-right:70px">Phone</th>
-          <th scope="col" style="padding-right:50px">Diseases</th>
-          <th scope="col" style="padding-right:70px">Doctor Name</th>
-          <th scope="col" style="padding-right:70px">Address</th>
-          <th scope="col" style="padding-right:100px">Status</th>
+            <table class="table table-success table-striped" id="patientData">
+                <thead>
+                <tr class="table">
+                    <th scope="col" style="padding-right:70px">Full Name</th>
+                    <th scope="col" style="padding-right:70px">Gender</th>
+                    <th scope="col" style="padding-right:70px">Age</th>
+                    <th scope="col" style="padding-right:70px">Appointment</th>
+                    <th scope="col" style="padding-right:70px">Email</th>
+                    <th scope="col" style="padding-right:70px">Phone</th>
+                    <th scope="col" style="padding-right:50px">Diseases</th>
+                    <th scope="col" style="padding-right:70px">Address</th>
+                    <th scope="col" style="padding-right:100px">Status</th>
+                    <th scope="col" style="padding-right:100px">vital_signs</th>
 
-        </tr>
-        </thead>
-        <tbody>
+                </tr>
+                </thead>
+                <tbody>
 
-<!--        <%-->
-<!--        AppointmentDAO appDAO = new AppointmentDAO(DBConnection.getConn());-->
-<!--        DoctorDAO docDAO = new DoctorDAO(DBConnection.getConn());-->
-<!--        List<Appointment> list = appDAO.getAllAppointment();-->
-<!--          for(Appointment appList : list)-->
-<!--          {-->
-<!--          Doctor doctor =	docDAO.getDoctorById(appList.getDoctorid());-->
-<!--          %>-->
-
-          <tr th:each="appList: ${patients}">
-
-            <td th:text="${appList.getfullname()}"/>
-            <td th:text="${appList.getGender()}"/>
-            <td th:text="${ appList.getAge()}"/>
-            <td th:text= "${appList.getAppointmentdate()}"/>
-            <td th:text="${ appList.getEmail()}"/>
-            <td th:text="${ appList.getPhone()}"/>
-            <td th:text="${appList.getDiseases()}"/>
-            <td th:text="${appList.getfullname()}"/>
-            <td th:text="${appList.getAddress()}"/>
-            <td th:text="${appList.getStatus()}"/>
-
-          </tr>
-
-        </tbody>
-
-      </table>
-
+                <tr th:each="appList: ${patients}">
+                    <td th:text="${appList.getFullName()}" scope="row"/>
+                    <td th:text="${appList.getGender()}"/>
+                    <td th:text="${ appList.getAge()}"/>
+                    <td th:text="${appList.getAppointmentdate()}"/>
+                    <td th:text="${ appList.getEmail()}"/>
+                    <td th:text="${ appList.getPhone()}"/>
+                    <td th:text="${appList.getDiseases()}"/>
+                    <td th:text="${appList.getAddress()}"/>
+                    <td th:text="${appList.getStatus()}"/>
+                    <td> <a href="signs.html">Signs</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-
-
-  </div>
-
 </div>
-
-
-
-
 </body>
 </html>

@@ -24,7 +24,7 @@ public class LoginService {
             if ("khushboo_DS4U".equals(email) && "Fhir@ds4u1".equals(password)) {
 
                 session.setAttribute("adminObj", new User());
-                J
+
                 resp.sendRedirect("https://fhir.epic.com/");
             } else {
                 session.setAttribute("errorMsg", "Invalid Username or Password.");

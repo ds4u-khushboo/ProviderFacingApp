@@ -11,10 +11,10 @@ public class Appointment {
 
     @Id
     private int id;
-    @Column(name = "userId")
-    private int userId;
+//    @Column(name = "userId")
+//    private Integer userId;
     @Column(name = "fullName")
-    private String fullname;
+    private String fullName;
     @Column(name = "gender")
     private String gender;
     @Column(name = "age")
@@ -27,12 +27,14 @@ public class Appointment {
     private String phone;
     @Column(name = "diseases")
     private String diseases;
-    @Column(name = "doctorId",nullable = true)
-    private int doctorid;
     @Column(name = "address")
     private String address;
     @Column(name = "Status")
     private String Status;
+
+    @Column(name = "vital_signs")
+    private String vitals;
+
 
     public Appointment() {
     }
@@ -45,20 +47,20 @@ public class Appointment {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(int userId) {
+//        this.userId = userId;
+//    }
+
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getfullname() {
-        return fullname;
-    }
-
-    public void setfullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getGender() {
@@ -107,14 +109,6 @@ public class Appointment {
 
     public void setDiseases(String diseases) {
         this.diseases = diseases;
-    }
-
-    public int getDoctorid() {
-        return doctorid;
-    }
-
-    public void setDoctorid(int doctorid) {
-        this.doctorid = doctorid;
     }
 
     public String getAddress() {

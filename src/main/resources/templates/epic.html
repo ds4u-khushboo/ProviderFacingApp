@@ -34,12 +34,10 @@
         <p>This app demonstrates how to authenticate and access protected FHIR resources.</p>
       </ion-card-content>
     </ion-card>
-
     <ion-item color="danger" *ngIf="error">
-      {{error | json }}
     </ion-item>
     <div  style="height:100px;" *ngIf="!hasLoggedIn">
-      <ion-label style="margin:10px;" position="floating">app / client_id</ion-label>
+      <ion-label style="margin:10px;" position="floating"></ion-label>
       <ion-input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="clientId" type="text" placeholder="Enter your app / client_id"></ion-input>
     </div>
     <div  style="height:100px;" *ngIf="!hasLoggedIn">
