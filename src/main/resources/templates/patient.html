@@ -38,7 +38,6 @@
                 </tr>
                 </thead>
                 <tbody>
-
                 <tr th:each="appList: ${patients}">
                     <td th:text="${appList.getFullName()}" scope="row"/>
                     <td th:text="${appList.getGender()}"/>
