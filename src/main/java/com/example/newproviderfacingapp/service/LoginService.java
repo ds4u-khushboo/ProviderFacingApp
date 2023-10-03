@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 @Service
 public class LoginService {
 
-    public void login(HttpServletRequest req, HttpServletResponse resp, String returnUrl) {
+    public void login(HttpServletRequest req, HttpServletResponse resp) {
 
         try {
 
@@ -20,7 +20,6 @@ public class LoginService {
 
             HttpSession session = req.getSession();
 
-            //logic for a static Admin
             if ("FHIR".equals(email) && "EpicFhir11!".equals(password)) {
 
                 session.setAttribute("object", new User());

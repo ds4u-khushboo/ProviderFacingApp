@@ -25,7 +25,7 @@
           <img src="https://avatars.io/static/default_128.jpg">
         </ion-avatar>
 
-        <p>Username: {{username}}</p>
+        <p>Username:</p>
         <ion-note item-right>
           Last login: 11h ago
         </ion-note>
@@ -37,16 +37,16 @@
     <ion-item color="danger" *ngIf="error">
     </ion-item>
     <div  style="height:100px;" *ngIf="!hasLoggedIn">
-      <ion-label style="margin:10px;" position="floating"></ion-label>
-      <ion-input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="clientId" type="text" placeholder="Enter your app / client_id"></ion-input>
+      <ion-label style="margin:10px;" position="floating">Client-Id</ion-label>
+      <input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="clientId" type="text" placeholder="Enter your app / client_id"></input>
     </div>
     <div  style="height:100px;" *ngIf="!hasLoggedIn">
       <ion-label style="margin:10px;" position="floating">FHIR endpoint</ion-label>
-      <ion-input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="FHIR" type="text" placeholder="Enter Epic FHIR endpoint"></ion-input>
+      <input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="FHIR" type="text" placeholder="Enter Epic FHIR endpoint"></input>
     </div>
     <div  style="height:100px;" *ngIf="!hasLoggedIn">
       <ion-label style="margin:10px;" position="floating">Redirect URL</ion-label>
-      <ion-input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="redirectURL" type="text" placeholder="Enter redirect url"></ion-input>
+      <input style="border:3px solid greenyellow;margin:10px;"  clearInput [(ngModel)]="redirectURL" type="text" placeholder="Enter redirect url"></input>
     </div>
     <div *ngIf="!hasLoggedIn">
       <ion-button expand="block" *ngIf="!hasLoggedIn" ion-button block (click)="browserOpen()" color="primary">
@@ -61,7 +61,7 @@
   <ion-list lines="full" *ngIf="searchResults">
     <ion-list-header>Search Results</ion-list-header>
     <ion-item *ngFor="let patient of searchResults">
-      {{patient.resource.name[0].text}}
+      {patientList}
     </ion-item>
   </ion-list>
 </ion-content>
