@@ -6,7 +6,6 @@ import com.example.newproviderfacingapp.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
@@ -48,4 +47,15 @@ public class LoginController {
         mav.addObject("patients", data);
         return  mav;
     }
+
+//    @RequestMapping(value = "authorize",method = RequestMethod.GET)
+//        public String authorize(HttpServletResponse response){
+//        String msg={"message":"invalid_client"}
+//    }
+//            if(response.getStatus() == 401){
+//                return "unauthorized";
+//
+//            }
+
+
 }
